@@ -49,13 +49,13 @@ import {
 import { formatDate } from "@/util/date";
 
 const editEventSchema = z.object({
-  name: z.string().min(1),
-  description: z.string().min(1),
+  name: z.string().min(1, "O nome é obrigatório"),
+  description: z.string().min(1, "A descrição é obrigatória"),
   startsOn: z.date(),
   file: z
     .instanceof(File)
     .refine((file) => file.size < MAX_UPLOAD_IMAGE_SIZE, {
-      message: `Your image was too large. It must be under ${MAX_UPLOAD_IMAGE_SIZE_IN_MB}MB`,
+      message: `A imagem é muito grande. Deve ter menos de ${MAX_UPLOAD_IMAGE_SIZE_IN_MB}MB`,
     })
     .optional(),
 });
@@ -135,7 +135,7 @@ export function EditEventForm({ event }: { event: Event }) {
           name="name"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Event Name</FormLabel>
+              <FormLabel>Nome do Evento</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -149,7 +149,7 @@ export function EditEventForm({ event }: { event: Event }) {
           name="description"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Description</FormLabel>
+              <FormLabel>Descrição</FormLabel>
               <FormControl>
                 <Textarea rows={7} {...field} />
               </FormControl>
@@ -163,7 +163,7 @@ export function EditEventForm({ event }: { event: Event }) {
           name="startsOn"
           render={({ field }) => (
             <FormItem className="flex flex-col">
-              <FormLabel>Date of Event</FormLabel>
+              <FormLabel>Data do Evento</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
@@ -202,12 +202,12 @@ export function EditEventForm({ event }: { event: Event }) {
           )}
         />
 
-        <FormLabel className="mt-4">Time of Event</FormLabel>
+        <FormLabel className="mt-4">Hora do Evento</FormLabel>
 
         <div className="flex items-end gap-2">
           <div className="grid gap-1 text-center">
             <Label htmlFor="hours" className="text-xs">
-              Hours
+              Horas
             </Label>
             <TimePickerInput
               picker="12hours"
@@ -220,7 +220,7 @@ export function EditEventForm({ event }: { event: Event }) {
           </div>
           <div className="grid gap-1 text-center">
             <Label htmlFor="minutes" className="text-xs">
-              Minutes
+              Minutos
             </Label>
             <TimePickerInput
               picker="minutes"
@@ -233,7 +233,7 @@ export function EditEventForm({ event }: { event: Event }) {
           </div>
           <div className="grid gap-1 text-center">
             <Label htmlFor="period" className="text-xs">
-              Period
+              Período
             </Label>
             <TimePeriodSelect
               period={period}
@@ -249,6 +249,7 @@ export function EditEventForm({ event }: { event: Event }) {
             <Clock className="ml-2 h-4 w-4" />
           </div>
         </div>
+
 
         <FormField
           control={form.control}
@@ -286,7 +287,7 @@ export function EditEventForm({ event }: { event: Event }) {
           }}
           isLoading={isPending}
         >
-          <Check className={btnIconStyles} /> Save Updates
+          <Check className={btnIconStyles} /> Salvar atualizações
         </LoaderButton>
       </form>
     </Form>

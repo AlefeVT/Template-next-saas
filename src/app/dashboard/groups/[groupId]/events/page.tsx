@@ -33,7 +33,7 @@ export default async function MembersPage({
         <h2
           className={cn(pageTitleStyles, "flex justify-between items-center")}
         >
-          Events
+          Eventos
           {isGroupOwner && <CreateEventButton />}
         </h2>
 
@@ -50,7 +50,7 @@ export default async function MembersPage({
               height="200"
               alt="no image placeholder image"
             ></Image>
-            <h2>No events created yet</h2>
+            <h2>Nenhum evento criado ainda</h2>
           </div>
         )}
 
@@ -64,7 +64,7 @@ export default async function MembersPage({
                 )}
               >
                 <div className="flex items-center gap-4">
-                  <AlarmCheckIcon className="w-6 h-6" /> Upcoming
+                  <AlarmCheckIcon className="w-6 h-6" /> Por vir
                 </div>
               </h3>
 
@@ -75,7 +75,7 @@ export default async function MembersPage({
                     "flex gap-8 items-center mt-8 py-4 px-4"
                   )}
                 >
-                  No upcoming events found
+                  Nenhum evento próximo encontrado
                 </p>
               )}
 
@@ -94,7 +94,7 @@ export default async function MembersPage({
                 )}
               >
                 <div className="flex items-center gap-4">
-                  <DoorClosed className="w-6 h-6" /> Expired
+                  <DoorClosed className="w-6 h-6" /> Expirado
                 </div>
               </h3>
 
@@ -105,7 +105,7 @@ export default async function MembersPage({
                     "flex gap-8 items-center mt-8 py-4 px-4"
                   )}
                 >
-                  No expired events found
+                  Nenhum evento expirado encontrado
                 </p>
               )}
 

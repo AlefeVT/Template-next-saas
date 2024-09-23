@@ -4,6 +4,7 @@ import { Event } from "@/db/schema";
 import { getEventImageUrl } from "../settings/util";
 import Image from "next/image";
 import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 import { EventCardActions } from "./event-card-actions";
 import { cn } from "@/lib/utils";
 import { cardStyles } from "@/styles/common";
@@ -28,7 +29,7 @@ export function EventCard({
         <div className="flex flex-col gap-2 sm:gap-4 flex-1">
           <h2 className="text-xl sm:text-2xl font-semibold">{event.name}</h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
-            {format(event.startsOn, "PPp")}
+            {format(new Date(event.startsOn), "PPPP 'às' p", { locale: ptBR })}
           </p>
           <p className="text-sm sm:text-base">{event.description}</p>
         </div>

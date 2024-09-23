@@ -13,13 +13,13 @@ export function GroupVisibilitySwitch({ group }: { group: Group }) {
   const { execute } = useServerAction(toggleGroupVisibilityAction, {
     onSuccess() {
       toast({
-        title: "Update successful",
-        description: "Group visibility updated.",
+        title: "Atualização bem-sucedida",
+        description: "Visibilidade do grupo atualizada.",
       });
     },
     onError({ err }) {
       toast({
-        title: "Something went wrong",
+        title: "Algo deu errado",
         description: err.message,
         variant: "destructive",
       });
@@ -35,7 +35,7 @@ export function GroupVisibilitySwitch({ group }: { group: Group }) {
         }}
         id="visibility"
       />
-      <Label htmlFor="visibility">Is Group Public</Label>
+      <Label htmlFor="visibility">O grupo é público</Label>
     </div>
   );
 }

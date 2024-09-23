@@ -55,14 +55,14 @@ export default function ForgotPasswordPage() {
 
   return (
     <div className="py-24 mx-auto max-w-[400px] space-y-6">
-      <h1 className={cn(pageTitleStyles, "text-center")}>Forgot Password</h1>
+      <h1 className={cn(pageTitleStyles, "text-center")}>Esqueceu sua senha</h1>
 
       {isSuccess && (
         <Alert variant="success">
           <Terminal className="h-4 w-4" />
-          <AlertTitle>Reset link sent</AlertTitle>
+          <AlertTitle>Link de redefinição enviado</AlertTitle>
           <AlertDescription>
-            We have sent you an email with a link to reset your password.
+          Enviamos um e-mail para você com um link para redefinir sua senha.
           </AlertDescription>
         </Alert>
       )}
@@ -79,7 +79,7 @@ export default function ForgotPasswordPage() {
                   <Input
                     {...field}
                     className="w-full"
-                    placeholder="Enter your email"
+                    placeholder="Digite seu e-mail"
                     type="email"
                   />
                 </FormControl>
@@ -89,7 +89,7 @@ export default function ForgotPasswordPage() {
           />
 
           <LoaderButton isLoading={isPending} className="w-full" type="submit">
-            Send Reset Email
+          Enviar e-mail de redefinição
           </LoaderButton>
         </form>
       </Form>

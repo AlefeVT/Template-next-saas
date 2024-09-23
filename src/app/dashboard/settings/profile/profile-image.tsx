@@ -18,7 +18,7 @@ export function getProfileImageFullUrl(profile: Profile) {
 
 export async function ProfileImage() {
   return (
-    <ConfigurationPanel title="Profile Image">
+    <ConfigurationPanel title="Imagem do perfil">
       <Suspense fallback={<Skeleton className="w-full h-[200px] rounded" />}>
         <ProfileImageContent />
       </Suspense>
@@ -42,7 +42,7 @@ async function ProfileImageContent() {
         width={200}
         height={200}
         className="h-[200px] sm:h-[100px] w-full object-cover rounded-xl mb-4 sm:mb-6"
-        alt="Profile image"
+        alt="Imagem do perfil"
       />
       <ProfileImageForm />
     </div>

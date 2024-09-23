@@ -30,8 +30,8 @@ import { deleteAccountAction } from "./actions";
 import { useServerAction } from "zsa-react";
 
 export const deleteSchema = z.object({
-  confirm: z.string().refine((v) => v === "Please delete", {
-    message: "Please type 'Please delete' to confirm",
+  confirm: z.string().refine((v) => v === "Por favor, delete", {
+    message: "Por favor, digite 'Por favor, delete' para confirmar",
   }),
 });
 
@@ -52,14 +52,14 @@ export function DeleteAccountButton() {
       onSuccess: () => {
         setIsOpen(false);
         toast({
-          title: "Account Deleted",
-          description: "Your account has been successfully deleted.",
+          title: "Conta Excluída",
+          description: "Sua conta foi excluída com sucesso.",
         });
       },
       onError: ({ err }) => {
         toast({
-          title: "Error",
-          description: err.message || "Failed to delete account.",
+          title: "Erro",
+          description: err.message || "Falha ao excluir a conta.",
           variant: "destructive",
         });
       },
@@ -74,16 +74,16 @@ export function DeleteAccountButton() {
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger asChild>
         <Button className="w-fit" variant="destructive">
-          Delete Account
+          Excluir Conta
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+          <AlertDialogTitle>Você tem certeza?</AlertDialogTitle>
           <AlertDialogDescription>
-            Deleting your account means you will not be able to recover your
-            data in the future. Please type <strong>Please delete</strong> to
-            confirm.
+            Excluir sua conta significa que você não poderá recuperar seus dados
+            no futuro. Por favor, digite <strong>Por favor, delete</strong> para
+            confirmar.
           </AlertDialogDescription>
         </AlertDialogHeader>
 
@@ -94,7 +94,7 @@ export function DeleteAccountButton() {
               name="confirm"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Confirm</FormLabel>
+                  <FormLabel>Confirmar</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -104,9 +104,9 @@ export function DeleteAccountButton() {
             />
 
             <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogCancel>Cancelar</AlertDialogCancel>
               <LoaderButton isLoading={isPending} variant="destructive">
-                Delete
+                Excluir
               </LoaderButton>
             </AlertDialogFooter>
           </form>

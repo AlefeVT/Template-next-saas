@@ -70,7 +70,7 @@ export function CreateGroupForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Group Name</FormLabel>
+              <FormLabel>Nome do grupo</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -84,7 +84,7 @@ export function CreateGroupForm() {
           name="description"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Description</FormLabel>
+              <FormLabel>Descrição</FormLabel>
               <FormControl>
                 <Textarea rows={7} {...field} />
               </FormControl>
@@ -94,7 +94,7 @@ export function CreateGroupForm() {
         />
 
         <LoaderButton isLoading={isPending}>
-          <CheckIcon className={btnIconStyles} /> Create Group
+          <CheckIcon className={btnIconStyles} /> Criar grupo
         </LoaderButton>
       </form>
     </Form>

@@ -16,61 +16,61 @@ export function TheProblemSection() {
         className="z-20 relative container mx-auto py-12 pt-24 bg-gray-100 dark:bg-background"
       >
         <p className="text-6xl mb-24 max-w-4xl mx-auto text-center">
-          I know, you know, starting a project has{" "}
-          <span className="font-bold">too many options</span>...
+          Eu sei, você sabe, começar um projeto tem{" "}
+          <span className="font-bold">muitas opções</span>...
         </p>
 
         <div className="grid grid-cols-3 gap-12 mb-24">
           <p className={cn(cellClass, "bg-green-800")}>
-            1. just run your favorite npx create command... on wait, should I
-            use next? vite? nuxt? sveltekit? someone said use angular 😊
+            1. Apenas execute seu comando favorito npx create... ah, espera, eu
+            devo usar next? vite? nuxt? sveltekit? alguém disse usar angular 😊
           </p>
 
           <p className={cn(cellClass, "bg-cyan-800")}>
-            2. Now find a component library that does&apos;t suck. DaisyUI?
-            Mantine? Chakra? Install it, set it up, determine is was a mistake.
-            🤔
+            2. Agora encontre uma biblioteca de componentes que não seja ruim.
+            DaisyUI? Mantine? Chakra? Instale-a, configure-a, descubra que foi
+            um erro. 🤔
           </p>
 
           <p className={cn(cellClass, "bg-blue-800")}>
-            3. But how will users register? reading through the lucia-auth docs
-            sucks. How do I figure out if someone is authenticated AND
-            authorized to see that button? 🫠
+            3. Mas como os usuários irão se registrar? ler a documentação do
+            lucia-auth é terrível. Como descubro se alguém está autenticado E
+            autorizado a ver aquele botão? 🫠
           </p>
 
           <p className={cn(cellClass, "bg-yellow-800")}>
-            4. Uh oh, where should I store my data? What ORM to use? Not
-            DynamoDB that&apos;s for sure. Where do I store my files? R2, S3? 😟
+            4. Oh não, onde devo armazenar meus dados? Qual ORM usar? Com
+            certeza não DynamoDB. Onde armazeno meus arquivos? R2, S3? 😟
           </p>
 
           <p className={cn(cellClass, "bg-pink-800")}>
-            5. Now you need to deploy your app, but where that won&apos;t
-            bankrupt you in case you get DDoSed? Railway? Vercel? AWS? A VPS?!
-            😖
+            5. Agora você precisa implantar seu aplicativo, mas onde isso não
+            vai te falir em caso de um ataque DDoS? Railway? Vercel? AWS? Um
+            VPS?! 😖
           </p>
 
           <p className={cn(cellClass, "bg-red-800")}>
-            6. OH WAIT you forgot that environment variable for the 3rd time and
-            have to redeploy because you didn&apos;t use a typesafe env library
-            from the start 🤬
+            6. ESPERA você esqueceu aquela variável de ambiente pela 3ª vez e
+            tem que reimplantar porque não usou uma biblioteca de env typesafe
+            desde o início 🤬
           </p>
         </div>
       </section>
 
       <section className="bg-white dark:bg-gray-900 py-24">
         <p className="text-4xl text-center max-w-xl mx-auto mb-12">
-          I&apos;ve built a LOT of projects and wasted a lot of time with the
-          initial project setup.
+          Eu já construí MUITOS projetos e perdi muito tempo configurando o
+          projeto inicial.
         </p>
 
         <p className="text-4xl text-center max-w-xl mx-auto mb-12">
-          <span className="rotate-3 text-blue-300">Trust me...</span>{" "}
-          you&apos;ll want a starter kit. It&apos;s why I&apos;m using this for
-          all my SaaS products.
+          <span className="rotate-3 text-blue-300">Confie em mim...</span>{" "}
+          você vai querer um kit de inicialização. É por isso que estou usando
+          isso para todos os meus produtos SaaS.
         </p>
 
         <p className="text-6xl text-center max-w-xl mx-auto text-green-400">
-          let&apos;s get to the fun stuff!
+          vamos para as partes divertidas!
         </p>
       </section>
     </div>

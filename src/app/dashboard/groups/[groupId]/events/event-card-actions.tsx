@@ -42,8 +42,8 @@ export function EventCardActions({ event }: { event: Event }) {
       <DeleteModal
         isOpen={isDeleteModalOpen}
         setIsOpen={setIsDeleteModalOpen}
-        title="Delete Event"
-        description="Are you sure you want to delete this event? Your members might be confused or upset if you delete this event."
+        title="Excluir evento"
+        description="Tem certeza de que deseja excluir este evento? Seus membros podem ficar confusos ou chateados se você excluir este evento."
         onConfirm={() => {
           execute({
             eventId: event.id,

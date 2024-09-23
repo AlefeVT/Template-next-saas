@@ -33,7 +33,7 @@ export default async function BrowsePage({
             <h1
               className={`${pageTitleStyles} text-2xl sm:text-3xl md:text-4xl`}
             >
-              Browse Groups
+              Navegar nos grupos
             </h1>
 
             <form
@@ -70,7 +70,7 @@ export default async function BrowsePage({
                     )}
                   </div>
                   <SubmitButton className="w-full sm:w-auto">
-                    Search
+                  Procurar
                   </SubmitButton>
                 </div>
               </div>
@@ -119,7 +119,7 @@ async function GroupsList({ search, page }: { search?: string; page: number }) {
           className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64"
         />
         <h2 className="text-xl sm:text-2xl text-center">
-          No groups matching your search
+          Nenhum grupo que corresponda à sua pesquisa
         </h2>
       </div>
     );
@@ -132,7 +132,7 @@ async function GroupsList({ search, page }: { search?: string; page: number }) {
             memberCount={group.memberCount.toString()}
             key={group.id}
             group={group}
-            buttonText="View"
+            buttonText="Visualizar"
           />
         ))}
       </div>

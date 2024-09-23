@@ -22,32 +22,32 @@ export function TabsSection({
         <Tabs value={tabInUrl} defaultValue={tabInUrl} activationMode="manual">
           <TabsList className="flex-wrap space-x-4 bg-inherit h-fit">
             <TabsTrigger asChild value="info">
-              <Link href={`/dashboard/groups/${groupId}/info`}>Info</Link>
+              <Link href={`/dashboard/groups/${groupId}/info`}>Informações</Link>
             </TabsTrigger>
 
             <TabsTrigger asChild value="posts">
-              <Link href={`/dashboard/groups/${groupId}/posts`}>Posts</Link>
+              <Link href={`/dashboard/groups/${groupId}/posts`}>Postagens</Link>
             </TabsTrigger>
 
             <TabsTrigger asChild value="events">
-              <Link href={`/dashboard/groups/${groupId}/events`}>Events</Link>
+              <Link href={`/dashboard/groups/${groupId}/events`}>Eventos</Link>
             </TabsTrigger>
 
-            <TabsTrigger asChild value="members">
-              <Link href={`/dashboard/groups/${groupId}/members`}>Members</Link>
+            <TabsTrigger asChild value="Membros">
+              <Link href={`/dashboard/groups/${groupId}/members`}>Membros</Link>
             </TabsTrigger>
 
             {showSettings && (
               <>
                 <TabsTrigger asChild value="settings">
                   <Link href={`/dashboard/groups/${groupId}/settings`}>
-                    Settings
+                  Configurações
                   </Link>
                 </TabsTrigger>
 
                 <TabsTrigger asChild value="danger">
                   <Link href={`/dashboard/groups/${groupId}/danger`}>
-                    Danger
+                    Perigo
                   </Link>
                 </TabsTrigger>
               </>

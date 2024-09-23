@@ -14,9 +14,9 @@ export function MarkReadAllButton() {
     {
       onSuccess: () => {
         toast({
-          title: "Success",
-          description: "All messages were marked as read.",
-        });
+          title: "Sucesso",
+          description: "Todas as mensagens foram marcadas como lidas.",
+        });        
       },
     }
   );
@@ -29,7 +29,7 @@ export function MarkReadAllButton() {
       }}
       className={btnStyles}
     >
-      <CheckCheckIcon className={btnIconStyles} /> Mark all as read
+      <CheckCheckIcon className={btnIconStyles} /> Marcar tudo como lido
     </LoaderButton>
   );
 }

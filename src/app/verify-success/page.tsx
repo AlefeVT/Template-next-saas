@@ -5,14 +5,14 @@ import Link from "next/link";
 export default function VerifySuccess() {
   return (
     <div className="py-24 mx-auto max-w-[400px] space-y-6">
-      <h1 className={pageTitleStyles}>Email Successfully Verified</h1>
+      <h1 className={pageTitleStyles}>E-mail verificado com sucesso</h1>
       <p className="text-xl">
-        Your email has been successfully verified. You can now sign in to your
-        account.
+      Seu e-mail foi verificado com sucesso. Agora você pode fazer login no seu
+      conta.
       </p>
 
       <Button asChild>
-        <Link href="/sign-in">Sign In</Link>
+        <Link href="/sign-in">Entrar</Link>
       </Button>
     </div>
   );

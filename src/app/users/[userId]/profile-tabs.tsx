@@ -17,19 +17,19 @@ export function ProfileTabs({ userId }: { userId: UserId }) {
         <Tabs value={tabInUrl} defaultValue={tabInUrl} activationMode="manual">
           <TabsList className="flex-wrap space-x-4 bg-inherit h-fit">
             <TabsTrigger asChild value="info">
-              <Link href={`/users/${userId}/info`}>Bio</Link>
+              <Link href={`/users/${userId}/info`}>Biografia</Link>
             </TabsTrigger>
 
             <TabsTrigger asChild value="posts">
-              <Link href={`/users/${userId}/posts`}>Recent Posts</Link>
+              <Link href={`/users/${userId}/posts`}>Postagens recentes</Link>
             </TabsTrigger>
 
             <TabsTrigger asChild value="groups">
-              <Link href={`/users/${userId}/groups`}>Groups</Link>
+              <Link href={`/users/${userId}/groups`}>Grupos</Link>
             </TabsTrigger>
 
             <TabsTrigger asChild value="followers">
-              <Link href={`/users/${userId}/followers`}>Followers</Link>
+              <Link href={`/users/${userId}/followers`}>Seguidores</Link>
             </TabsTrigger>
           </TabsList>
         </Tabs>

@@ -12,7 +12,7 @@ export default async function ProfileLayout({
   children: ReactNode;
 }) {
   const { userId } = params;
-  console.log(params.userId);
+  // console.log(params.userId);
 
   return (
     <>

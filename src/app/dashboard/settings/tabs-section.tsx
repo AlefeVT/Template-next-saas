@@ -15,23 +15,23 @@ export function SettingsTab({ hasSubscription }: { hasSubscription: boolean }) {
         <Tabs value={tabInUrl} defaultValue={tabInUrl} activationMode="manual">
           <TabsList className="space-x-4 bg-inherit">
             <TabsTrigger asChild value="profile">
-              <Link href={`/dashboard/settings/profile`}>Profile</Link>
+              <Link href={`/dashboard/settings/profile`}>Perfil</Link>
             </TabsTrigger>
 
             <TabsTrigger asChild value="security">
-              <Link href={`/dashboard/settings/security`}>Security</Link>
+              <Link href={`/dashboard/settings/security`}>Segurança</Link>
             </TabsTrigger>
 
             {hasSubscription && (
               <TabsTrigger asChild value="subscription">
                 <Link href={`/dashboard/settings/subscription`}>
-                  Subscription
+                  Subscrição
                 </Link>
               </TabsTrigger>
             )}
 
             <TabsTrigger asChild value="danger">
-              <Link href={`/dashboard/settings/danger`}>Danger</Link>
+              <Link href={`/dashboard/settings/danger`}>Perigo</Link>
             </TabsTrigger>
           </TabsList>
         </Tabs>

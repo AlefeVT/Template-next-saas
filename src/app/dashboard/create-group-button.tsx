@@ -13,8 +13,8 @@ export function CreateGroupButton() {
   return (
     <>
       <InteractiveOverlay
-        title={"Create Group"}
-        description={"Create a new group to start managing your events."}
+        title={"Criar grupo"}
+        description={"Crie um novo grupo para começar a gerenciar seus eventos."}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         form={<CreateGroupForm />}
@@ -27,7 +27,7 @@ export function CreateGroupButton() {
         className={btnStyles}
       >
         <PlusCircle className={btnIconStyles} />
-        Create Group
+        Criar grupo
       </Button>
     </>
   );

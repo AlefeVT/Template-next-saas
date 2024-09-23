@@ -15,8 +15,8 @@ export function CreatePostButton() {
   return (
     <>
       <InteractiveOverlay
-        title={"Create Post"}
-        description={"Fill in the form below to create a post."}
+        title={"Criar postagem"}
+        description={"Preencha o formulário abaixo para criar uma postagem."}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         form={<CreateEventForm groupId={parseInt(groupId)} />}
@@ -29,7 +29,7 @@ export function CreatePostButton() {
         className={btnStyles}
       >
         <Calendar className={btnIconStyles} />
-        Create Post
+        Criar postagem
       </Button>
     </>
   );

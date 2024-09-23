@@ -82,13 +82,13 @@ export async function PostCard({ post }: { post: Post }) {
         {canDeletePost ? (
           <Button asChild className="w-full sm:w-fit">
             <Link href={`/dashboard/groups/${post.groupId}/posts/${post.id}`}>
-              Manage post...
+            Gerenciar postagem...
             </Link>
           </Button>
         ) : (
           <Button asChild className="w-full sm:w-fit" variant={"secondary"}>
             <Link href={`/dashboard/groups/${post.groupId}/posts/${post.id}`}>
-              Read post...
+            Gerenciar postagem...
             </Link>
           </Button>
         )}

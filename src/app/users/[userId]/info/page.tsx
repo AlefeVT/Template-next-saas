@@ -28,7 +28,7 @@ export default async function InfoContent({
             height="200"
             alt="no gruops placeholder image"
           ></Image>
-          <h2 className="text-2xl">This user has no bio</h2>
+          <h2 className="text-2xl">Este usuário não tem biografia</h2>
         </div>
       )}
 

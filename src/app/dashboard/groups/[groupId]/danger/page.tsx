@@ -18,13 +18,13 @@ export default async function DangerTab({
 
   return (
     <div className="space-y-8">
-      <h1 className={pageTitleStyles}>Danger</h1>
+      <h1 className={pageTitleStyles}>Perigo</h1>
 
       <div className="grid grid-cols-2 gap-8">
-        <ConfigurationPanel variant="destructive" title={"Delete this Group"}>
+        <ConfigurationPanel variant="destructive" title={"Excluir este grupo"}>
           <div className="flex flex-col gap-8">
             <p className="dark:text-gray-400">
-              Delete this group and all it's data.
+            Exclua este grupo e todos os seus dados.
             </p>
             <DeleteGroupButton />
           </div>

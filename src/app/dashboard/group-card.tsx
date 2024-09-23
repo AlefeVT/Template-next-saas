@@ -41,7 +41,7 @@ export function GroupCard({
       </CardHeader>
       <CardContent>
         <div className="flex gap-2 justify-center items-center">
-          <UsersIcon /> {memberCount} members
+          <UsersIcon /> {memberCount} membros
         </div>
       </CardContent>
       <CardFooter>

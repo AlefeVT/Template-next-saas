@@ -38,7 +38,7 @@ export default async function PostPage({
       <div className="flex justify-between items-center">
         <Button asChild>
           <Link href={`/dashboard/groups/${groupId}/posts`}>
-            <ChevronLeft /> Back to Posts
+            <ChevronLeft /> Voltar às postagens
           </Link>
         </Button>
 
@@ -50,7 +50,7 @@ export default async function PostPage({
       {isPostAdmin ? <EditPostForm post={post} /> : <p>{post.message}</p>}
 
       <h2 className="text-2xl" id="replies">
-        Replies
+      Respostas
       </h2>
 
       <Suspense>

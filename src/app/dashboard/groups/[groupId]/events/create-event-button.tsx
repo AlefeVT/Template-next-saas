@@ -15,8 +15,8 @@ export function CreateEventButton() {
   return (
     <>
       <InteractiveOverlay
-        title={"Create Event"}
-        description={"Fill in the form below to create an event."}
+        title={"Criar Evento"}
+        description={"Preencha o formulário abaixo para criar um evento."}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         form={<CreateEventForm groupId={parseInt(groupId)} />}
@@ -29,7 +29,7 @@ export function CreateEventButton() {
         className={btnStyles}
       >
         <Calendar className={btnIconStyles} />
-        Create Event
+        Criar Evento
       </Button>
     </>
   );

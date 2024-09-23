@@ -6,35 +6,35 @@ export class PublicError extends Error {
 
 export class AuthenticationError extends PublicError {
   constructor() {
-    super("You must be logged in to view this content");
+    super("Você deve estar logado para ver este conteúdo");
     this.name = "AuthenticationError";
   }
 }
 
 export class EmailInUseError extends PublicError {
   constructor() {
-    super("Email is already in use");
+    super("O e-mail já está em uso");
     this.name = "EmailInUseError";
   }
 }
 
 export class NotFoundError extends PublicError {
   constructor() {
-    super("Resource not found");
+    super("Recurso não encontrado");
     this.name = "NotFoundError";
   }
 }
 
 export class TokenExpiredError extends PublicError {
   constructor() {
-    super("Token has expired");
+    super("O token expirou");
     this.name = "TokenExpiredError";
   }
 }
 
 export class LoginError extends PublicError {
   constructor() {
-    super("Invalid email or password");
+    super("E-mail ou senha inválidos");
     this.name = "LoginError";
   }
 }

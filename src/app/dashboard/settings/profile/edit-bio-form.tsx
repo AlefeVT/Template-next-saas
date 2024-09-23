@@ -36,12 +36,12 @@ export function EditBioForm({ bio }: { bio: string }) {
                 toast({
                   title: "Uh-oh!",
                   variant: "destructive",
-                  description: "Your profile bio failed to update.",
+                  description: "Não foi possível atualizar a sua biografia do perfil.",
                 });
               } else {
                 toast({
-                  title: "Success!",
-                  description: "Your profile bio has been updated.",
+                  title: "Sucesso!",
+                  description: "A biografia do seu perfil foi atualizada.",
                 });
               }
             });
@@ -49,7 +49,7 @@ export function EditBioForm({ bio }: { bio: string }) {
           isLoading={isPending}
           className="self-end"
         >
-          Save Changes
+          Salvar alterações
         </LoaderButton>
       </div>
     </div>

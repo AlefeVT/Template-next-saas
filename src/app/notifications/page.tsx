@@ -26,7 +26,7 @@ export default async function NotificationsPage() {
           <h1
             className={cn(pageTitleStyles, "flex justify-between items-center")}
           >
-            Your Notifications
+            Suas notificações
           </h1>
 
           <div className="flex flex-wrap gap-2 w-full sm:w-auto">
@@ -51,7 +51,7 @@ export default async function NotificationsPage() {
                 height="200"
                 alt="no image placeholder image"
               ></Image>
-              <h2 className="text-2xl">You have no notifications</h2>
+              <h2 className="text-2xl">Você não tem notificações</h2>
             </div>
           )}
 

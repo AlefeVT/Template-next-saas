@@ -7,7 +7,7 @@ import { getUserProfileLoader } from "./page";
 
 export async function ProfileName() {
   return (
-    <ConfigurationPanel title="Display Name">
+    <ConfigurationPanel title="Nome de exibição">
       <Suspense fallback={<Skeleton className="w-full h-[200px] rounded" />}>
         <ProfileNameWrapper />
       </Suspense>

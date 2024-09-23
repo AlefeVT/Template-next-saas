@@ -70,12 +70,12 @@ export default async function MembersPage({
   return (
     <div className="space-y-8">
       <h1 className={cn(pageTitleStyles, "flex justify-between items-center")}>
-        <div>Members</div>
+        <div>Membros</div>
         {isGroupOwner && <InviteButton />}
       </h1>
 
       <h2 className="text-2xl flex items-center gap-2">
-        <Crown /> Owner
+        <Crown /> Proprietário
       </h2>
       <div className="flex flex-wrap gap-4">
         {owners.map((member) => (
