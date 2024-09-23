@@ -25,11 +25,11 @@ export default async function Settings({
   return (
     <div className="space-y-8">
       <h1 className={`${pageTitleStyles} text-center md:text-left`}>
-        Group Settings
+      Configurações de grupo
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <ConfigurationPanel title={"Group Image"}>
+        <ConfigurationPanel title={"Imagem do grupo"}>
           <div className="flex flex-col gap-8">
             <Image
               src={getGroupImageUrl(group)}
@@ -39,22 +39,22 @@ export default async function Settings({
               alt="image of the group"
             />
             <p className="dark:text-gray-400 text-sm">
-              Upload a group image to make your group stand out.
+            Faça upload de uma imagem de grupo para destacar seu grupo.
             </p>
             <BannerUploadForm groupId={group.id} />
           </div>
         </ConfigurationPanel>
 
-        <ConfigurationPanel title={"Group Name"}>
+        <ConfigurationPanel title={"Nome do grupo"}>
           <GroupNameForm groupId={group.id} groupName={group?.name ?? ""} />
         </ConfigurationPanel>
 
-        <ConfigurationPanel title={"Group Visibility"}>
+        <ConfigurationPanel title={"Visibilidade do grupo"}>
           <div className="flex flex-col gap-8">
             <p className="dark:text-gray-400 text-sm">
-              Groups are private by default. If you want random people on the
-              internet to find and join your group without an invite, switch
-              this to on.
+            Os grupos são privados por padrão. Se você quiser pessoas aleatórias no
+              internet para encontrar e ingressar no seu grupo sem convite, mude
+              isso em diante.
             </p>
             <GroupVisibilitySwitch group={group} />
           </div>
@@ -62,7 +62,7 @@ export default async function Settings({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <ConfigurationPanel title={"Group Description"}>
+        <ConfigurationPanel title={"Descrição do grupo"}>
           <GroupDescriptionForm
             groupId={group.id}
             description={group?.description ?? ""}

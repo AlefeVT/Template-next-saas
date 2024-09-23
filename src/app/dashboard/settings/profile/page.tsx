@@ -18,15 +18,15 @@ export default async function SettingsPage() {
         <ProfileName />
       </div>
 
-      <ConfigurationPanel title="Profile Bio">
+      <ConfigurationPanel title="Biografia do perfil">
         <Suspense fallback={<Skeleton className="w-full h-[400px] rounded" />}>
           <BioFormWrapper />
         </Suspense>
       </ConfigurationPanel>
 
-      <ConfigurationPanel title="Theme">
+      <ConfigurationPanel title="Tema">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
-          <span className="mb-2 sm:mb-0">Toggle dark mode</span>
+          <span className="mb-2 sm:mb-0">Alternar modo escuro</span>
           <ModeToggle />
         </div>
       </ConfigurationPanel>

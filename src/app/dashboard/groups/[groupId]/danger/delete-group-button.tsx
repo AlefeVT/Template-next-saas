@@ -45,16 +45,16 @@ export function DeleteGroupButton() {
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger asChild>
         <Button variant={"destructive"} className={cn(btnStyles, "w-fit")}>
-          <DoorOpen className={btnIconStyles} /> Delete Group
+          <DoorOpen className={btnIconStyles} /> Excluir grupo
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Delete Group</AlertDialogTitle>
+          <AlertDialogTitle>Excluir grupo</AlertDialogTitle>
           <AlertDialogDescription>
-            Are you sure you want to delete this group? All your members will no
-            longer be able to view the group information and all data will be
-            removed from our system.
+            Tem certeza de que deseja excluir este grupo? Todos os seus membros não
+            não será mais possível visualizar as informações do grupo e todos os dados serão
+            removido do nosso sistema.
           </AlertDialogDescription>
         </AlertDialogHeader>
 
@@ -66,7 +66,7 @@ export function DeleteGroupButton() {
               execute({ groupId });
             }}
           >
-            Delete Group
+            Excluir grupo
           </LoaderButton>
         </AlertDialogFooter>
       </AlertDialogContent>

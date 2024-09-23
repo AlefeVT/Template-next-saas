@@ -38,7 +38,7 @@ export default async function FollowersPage({
             height="200"
             alt="no gruops placeholder image"
           ></Image>
-          <h2 className="text-2xl">This user no followers</h2>
+          <h2 className="text-2xl">Este usuário não tem seguidores</h2>
         </div>
       )}
 

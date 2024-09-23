@@ -39,12 +39,12 @@ export function Notifications({
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuLabel>Notifications</DropdownMenuLabel>
+        <DropdownMenuLabel>Notificações</DropdownMenuLabel>
         <DropdownMenuSeparator />
 
         {notifications.length === 0 && (
           <div className="flex items-center gap-2 p-4">
-            <div>No new notifications</div>
+            <div>Nenhuma nova notificação</div>
           </div>
         )}
 
@@ -73,7 +73,7 @@ export function Notifications({
             className="text-xs text-blue-400 hover:text-blue-500"
             href="/notifications"
           >
-            View Notifications
+            Ver notificações
           </Link>
         </div>
       </DropdownMenuContent>

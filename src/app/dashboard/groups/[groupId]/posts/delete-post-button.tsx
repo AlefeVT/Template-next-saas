@@ -36,12 +36,12 @@ export function DeletePostButton({ postId }: { postId: number }) {
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger asChild>
         <Button variant={"destructive"} className={cn(btnStyles, "w-fit")}>
-          <Trash className={btnIconStyles} /> Delete Post
+          <Trash className={btnIconStyles} /> Excluir postagem
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Delete Post</AlertDialogTitle>
+          <AlertDialogTitle>Excluir postagem</AlertDialogTitle>
           <AlertDialogDescription>
             Are you sure you want to delete this post?
           </AlertDialogDescription>
@@ -55,7 +55,7 @@ export function DeletePostButton({ postId }: { postId: number }) {
               execute({ postId });
             }}
           >
-            Delete Post
+            Excluir postagem
           </LoaderButton>
         </AlertDialogFooter>
       </AlertDialogContent>

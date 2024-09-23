@@ -23,7 +23,7 @@ export function ResetPasswordEmail({ token }: { token: string }) {
   return (
     <Html>
       <Head />
-      <Preview>Reset your password</Preview>
+      <Preview>Redefinir sua senha</Preview>
       <Tailwind>
         <React.Fragment>
           <Body className="bg-white my-auto mx-auto font-sans">
@@ -40,7 +40,7 @@ export function ResetPasswordEmail({ token }: { token: string }) {
 
               <Section className="text-center mt-[32px] mb-[32px]">
                 <Text className="text-black font-medium text-[14px] leading-[24px] mb-8">
-                  Click the following link to reset your password
+                Clique no link a seguir para redefinir sua senha
                 </Text>
 
                 <Text className="text-black font-medium text-[14px] leading-[24px]">
@@ -49,7 +49,7 @@ export function ResetPasswordEmail({ token }: { token: string }) {
                     target="_blank"
                     className="text-[#2754C5] underline"
                   >
-                    Reset Password
+                    Redefinir senha
                   </Link>
                 </Text>
               </Section>
@@ -57,7 +57,7 @@ export function ResetPasswordEmail({ token }: { token: string }) {
               <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full" />
 
               <Text className="text-[#666666] text-[12px] leading-[24px] flex items-center justify-center">
-                © 2024 {applicationName}. All rights reserved.
+                © 2024 {applicationName}. Todos os direitos reservados.
               </Text>
             </Container>
           </Body>

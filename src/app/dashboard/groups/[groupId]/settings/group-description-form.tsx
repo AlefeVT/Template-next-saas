@@ -75,7 +75,7 @@ export function GroupDescriptionForm({
           name="description"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Group Description</FormLabel>
+              <FormLabel>Descrição do grupo</FormLabel>
               <FormControl>
                 <Textarea
                   className="text-base leading-7"
@@ -88,7 +88,7 @@ export function GroupDescriptionForm({
           )}
         />
         <LoaderButton className="w-fit self-end" isLoading={isPending}>
-          Save
+        Salvar
         </LoaderButton>
       </form>
     </Form>

@@ -41,7 +41,7 @@ export default async function InfoPage({
   return (
     <div className="space-y-8">
       <h1 className={cn(pageTitleStyles, "flex justify-between items-center")}>
-        <div>Info</div>
+        <div>Informações</div>
       </h1>
 
       <div className="flex flex-col lg:flex-row gap-8">

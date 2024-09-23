@@ -16,9 +16,9 @@ export default function NotFound() {
         height="200"
         alt="no image placeholder image"
       ></Image>
-      <h2>Uh-oh, this route wasn't found</h2>
+      <h2>Uh-oh, esta rota não foi encontrada</h2>
       <Button asChild>
-        <Link href={`/dashboard/groups/${groupId}/info`}>View Group Info</Link>
+        <Link href={`/dashboard/groups/${groupId}/info`}>Ver informações do grupo</Link>
       </Button>
     </div>
   );

@@ -25,14 +25,17 @@ import { useServerAction } from "zsa-react";
 
 const registrationSchema = z
   .object({
-    password: z.string().min(8),
+    password: z.string().min(8, "A senha deve ter no mínimo 8 caracteres"),
     token: z.string(),
-    passwordConfirmation: z.string().min(8),
+    passwordConfirmation: z
+      .string()
+      .min(8, "A confirmação da senha deve ter no mínimo 8 caracteres"),
   })
   .refine((data) => data.password === data.passwordConfirmation, {
-    message: "Passwords don't match",
+    message: "As senhas não coincidem",
     path: ["passwordConfirmation"],
   });
+
 
 export default function ResetPasswordPage({
   searchParams,
@@ -63,18 +66,18 @@ export default function ResetPasswordPage({
       {isSuccess && (
         <>
           <h1 className={cn(pageTitleStyles, "text-center")}>
-            Password Updated
+          Senha atualizada!
           </h1>
           <Alert variant="success">
             <Terminal className="h-4 w-4" />
-            <AlertTitle>Password updated</AlertTitle>
+            <AlertTitle>Senha atualizada!</AlertTitle>
             <AlertDescription>
-              Your password has been successfully updated.
+            Sua senha foi atualizada com sucesso.
             </AlertDescription>
           </Alert>
 
           <Button variant="default" asChild className="w-full">
-            <Link href="/sign-in/email">Login with New Password</Link>
+            <Link href="/sign-in/email">Faça login com nova senha</Link>
           </Button>
         </>
       )}
@@ -82,13 +85,13 @@ export default function ResetPasswordPage({
       {!isSuccess && (
         <>
           <h1 className={cn(pageTitleStyles, "text-center")}>
-            Change Password
+          Alterar a senha
           </h1>
 
           {error && (
             <Alert variant="destructive">
               <Terminal className="h-4 w-4" />
-              <AlertTitle>Uh-oh, something went wrong</AlertTitle>
+              <AlertTitle>Uh-oh, algo deu errado</AlertTitle>
               <AlertDescription>{error.message}</AlertDescription>
             </Alert>
           )}
@@ -100,12 +103,12 @@ export default function ResetPasswordPage({
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel>Senha</FormLabel>
                     <FormControl>
                       <Input
                         {...field}
                         className="w-full"
-                        placeholder="Enter your new password"
+                        placeholder="Digite sua nova senha"
                         type="password"
                       />
                     </FormControl>
@@ -119,12 +122,12 @@ export default function ResetPasswordPage({
                 name="passwordConfirmation"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Confirm Password</FormLabel>
+                    <FormLabel>Confirme sua senha</FormLabel>
                     <FormControl>
                       <Input
                         {...field}
                         className="w-full"
-                        placeholder="Enter Confirm your Password"
+                        placeholder="Entre Confirme sua senha"
                         type="password"
                       />
                     </FormControl>
@@ -138,7 +141,7 @@ export default function ResetPasswordPage({
                 className="w-full"
                 type="submit"
               >
-                Change Password
+                Alterar a senha
               </LoaderButton>
             </form>
           </Form>

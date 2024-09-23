@@ -12,7 +12,7 @@ import { rateLimitByKey } from "@/lib/limiter";
 import sanitizeHtml from "sanitize-html";
 
 export const updateProfileImageAction = authenticatedAction
-  .createServerAction()
+.createServerAction()
   .input(
     z.object({
       fileWrapper: z.instanceof(FormData),
@@ -24,7 +24,13 @@ export const updateProfileImageAction = authenticatedAction
       limit: 3,
       window: 60000,
     });
+    
     const file = input.fileWrapper.get("file") as File;
+    
+    if (!file) {
+      throw new Error("Nenhum arquivo foi enviado.");
+    }
+
     await updateProfileImageUseCase(file, ctx.user.id);
     revalidatePath(`/dashboard/settings/profile`);
   });

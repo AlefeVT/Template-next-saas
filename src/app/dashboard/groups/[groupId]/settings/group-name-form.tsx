@@ -43,15 +43,15 @@ export function GroupNameForm({
     {
       onSuccess: () => {
         toast({
-          title: "Name Updated",
-          description: "Name updated successfully.",
+          title: "Nome atualizado",
+          description: "Nome atualizado com sucesso.",
         });
         form.reset();
       },
       onError: ({ err }) => {
         toast({
           title: "Error",
-          description: err.message || "Failed to update group name.",
+          description: err.message || "Falha ao atualizar o nome do grupo.",
           variant: "destructive",
         });
       },
@@ -75,7 +75,7 @@ export function GroupNameForm({
           name="name"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Group Name</FormLabel>
+              <FormLabel>Nome do grupo</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -83,7 +83,7 @@ export function GroupNameForm({
             </FormItem>
           )}
         />
-        <LoaderButton isLoading={isPending}>Save</LoaderButton>
+        <LoaderButton isLoading={isPending}>Salvar</LoaderButton>
       </form>
     </Form>
   );

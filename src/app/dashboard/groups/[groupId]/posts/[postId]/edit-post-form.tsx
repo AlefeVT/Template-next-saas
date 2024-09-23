@@ -80,7 +80,7 @@ export function EditPostForm({ post }: { post: Post }) {
           name="title"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Title</FormLabel>
+              <FormLabel>Título</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -94,7 +94,7 @@ export function EditPostForm({ post }: { post: Post }) {
           name="message"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Mensagem</FormLabel>
               <FormControl>
                 <Textarea rows={7} {...field} />
               </FormControl>
@@ -106,13 +106,13 @@ export function EditPostForm({ post }: { post: Post }) {
         {error && (
           <Alert variant="destructive">
             <Terminal className="h-4 w-4" />
-            <AlertTitle>Error updating post</AlertTitle>
+            <AlertTitle>Erro ao atualizar a postagem</AlertTitle>
             <AlertDescription>{error.message}</AlertDescription>
           </Alert>
         )}
 
         <LoaderButton isLoading={isPending} className="w-fit ml-auto">
-          <CheckIcon className={btnIconStyles} /> Update Post
+          <CheckIcon className={btnIconStyles} /> Atualizar postagem
         </LoaderButton>
       </form>
     </Form>

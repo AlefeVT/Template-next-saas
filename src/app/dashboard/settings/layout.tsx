@@ -20,7 +20,7 @@ export default async function SettingsPage({
       <div className={cn(headerStyles, "py-8")}>
         <div className="container mx-auto">
           <div className="flex justify-between">
-            <h1 className="text-4xl">Account Settings</h1>
+            <h1 className="text-4xl">Configurações de Conta</h1>
 
             <Suspense
               fallback={<Skeleton className="w-[160px] h-[40px] rounded" />}
@@ -50,7 +50,7 @@ async function SwitchProfileButton() {
   return (
     <Button asChild className={btnStyles}>
       <Link href={`/users/${user!.id}`}>
-        <SquareUser className={btnIconStyles} /> Switch to Profile
+        <SquareUser className={btnIconStyles} /> Mudar para perfil
       </Link>
     </Button>
   );

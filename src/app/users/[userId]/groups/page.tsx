@@ -22,7 +22,7 @@ export default async function GroupsContent({
             className="w-full max-w-[200px] h-auto"
           />
           <h2 className="text-2xl text-center px-4">
-            This user isn't part of any groups
+          Este usuário não faz parte de nenhum grupo
           </h2>
         </div>
       )}

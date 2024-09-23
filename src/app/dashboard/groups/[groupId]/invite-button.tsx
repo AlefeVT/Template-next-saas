@@ -53,14 +53,14 @@ export function InviteButton() {
       setIsOpen(false);
       form.reset();
       toast({
-        title: "Invite Sent",
-        description: "Tell your friend to check their email.",
+        title: "Convite enviado",
+        description: "Diga ao seu amigo para verificar o e-mail dele.",
       });
     },
     onError: ({ err }) => {
       toast({
         title: "Error",
-        description: err.message || "Failed to send invite.",
+        description: err.message || "Falha ao enviar o convite.",
         variant: "destructive",
       });
     },
@@ -77,14 +77,14 @@ export function InviteButton() {
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger asChild>
         <Button className={btnStyles}>
-          <MailIcon className={btnIconStyles} /> Send Invite
+          <MailIcon className={btnIconStyles} /> Enviar convite
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Invite a Friend</AlertDialogTitle>
+          <AlertDialogTitle>Convide um amigo</AlertDialogTitle>
           <AlertDialogDescription>
-            Enter the email of the person you want to invite to this group.
+          Digite o e-mail da pessoa que você deseja convidar para este grupo.
           </AlertDialogDescription>
         </AlertDialogHeader>
 
@@ -105,8 +105,8 @@ export function InviteButton() {
             />
 
             <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <LoaderButton isLoading={isPending}>Invite</LoaderButton>
+              <AlertDialogCancel>Cancelar</AlertDialogCancel>
+              <LoaderButton isLoading={isPending}>Convidar</LoaderButton>
             </AlertDialogFooter>
           </form>
         </Form>

@@ -40,8 +40,8 @@ export function PostReplyForm({
   const { execute, error, isPending } = useServerAction(createReplyAction, {
     onSuccess() {
       toast({
-        title: "Success",
-        description: "Reply created successfully.",
+        title: "Sucesso!",
+        description: "Resposta criada com sucesso.",
       });
       setIsOverlayOpen(false);
       form.reset();
@@ -50,7 +50,7 @@ export function PostReplyForm({
       toast({
         title: "Uh oh",
         variant: "destructive",
-        description: "Something went wrong creating your reply.",
+        description: "Algo deu errado ao criar sua resposta.",
       });
     },
   });
@@ -84,7 +84,7 @@ export function PostReplyForm({
           name="message"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Mensagem</FormLabel>
               <FormControl>
                 <Textarea rows={4} {...field} />
               </FormControl>
@@ -96,13 +96,13 @@ export function PostReplyForm({
         {error && (
           <Alert variant="destructive">
             <Terminal className="h-4 w-4" />
-            <AlertTitle>Error creating reply</AlertTitle>
+            <AlertTitle>Erro ao criar resposta</AlertTitle>
             <AlertDescription>{error.message}</AlertDescription>
           </Alert>
         )}
 
         <LoaderButton isLoading={isPending}>
-          <SendIcon className={btnIconStyles} /> Post Reply
+          <SendIcon className={btnIconStyles} /> Postar resposta
         </LoaderButton>
       </form>
     </Form>

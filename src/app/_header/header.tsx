@@ -99,7 +99,7 @@ async function HeaderActions() {
                   href="/dashboard/settings"
                   className="flex gap-2 items-center cursor-pointer"
                 >
-                  <Settings2Icon className="w-4 h-4" /> Settings
+                  <Settings2Icon className="w-4 h-4" /> Configurações
                 </Link>
               </DropdownMenuItem>
               <SignOutItem />
@@ -113,7 +113,7 @@ async function HeaderActions() {
       ) : (
         <>
           <Button asChild variant="secondary">
-            <Link href="/sign-in">Sign In</Link>
+            <Link href="/sign-in">Entrar</Link>
           </Button>
         </>
       )}

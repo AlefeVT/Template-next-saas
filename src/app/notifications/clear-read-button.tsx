@@ -25,8 +25,8 @@ export function ClearReadButton() {
   const { execute, isPending } = useServerAction(clearReadNotificationsAction, {
     onSuccess: () => {
       toast({
-        title: "Success",
-        description: "Read messages were cleared.",
+        title: "Sucesso",
+        description: "Mensagens lidas foram apagadas.",
       });
       setIsOpen(false);
     },
@@ -36,27 +36,27 @@ export function ClearReadButton() {
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger asChild>
         <Button className={btnStyles} variant="destructive">
-          <TrashIcon className={btnIconStyles} /> Clear read notifications
+          <TrashIcon className={btnIconStyles} /> Limpar notificações de leitura
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+          <AlertDialogTitle>Tem certeza?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently clear all your read notifications from the
-            system.
+            Isso limpará permanentemente todas as suas notificações de leitura do
+            sistema.
           </AlertDialogDescription>
         </AlertDialogHeader>
 
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>Cancelar</AlertDialogCancel>
           <LoaderButton
             onClick={() => {
               execute();
             }}
             isLoading={isPending}
           >
-            Clear Notifications
+            Limpar notificações
           </LoaderButton>
         </AlertDialogFooter>
       </AlertDialogContent>

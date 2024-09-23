@@ -118,7 +118,7 @@ export function SocialLinksForm({ group }: { group: Group }) {
           )}
         />
         <LoaderButton className="w-fit ml-auto" isLoading={isPending}>
-          Save
+        Salvar
         </LoaderButton>
       </form>
     </Form>

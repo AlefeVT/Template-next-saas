@@ -27,7 +27,7 @@ export default async function PostsContent({
             height="200"
             alt="no gruops placeholder image"
           ></Image>
-          <h2 className="text-2xl">This user has no posts yet</h2>
+          <h2 className="text-2xl">Este usuário ainda não tem postagens</h2>
         </div>
       )}
       <div className="space-y-8">

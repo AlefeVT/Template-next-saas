@@ -18,7 +18,7 @@ export function LogoutButton() {
       isLoading={isPending}
     >
       <LogOut className={btnIconStyles} />
-      Logout of all Sessions
+      Sair de todas as sessões
     </LoaderButton>
   );
 }

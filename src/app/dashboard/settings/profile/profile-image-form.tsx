@@ -22,10 +22,13 @@ import {
 } from "@/app-config";
 import { useServerAction } from "zsa-react";
 
+// Validação do arquivo, sem uso de instanceof para evitar problemas com SSR
 const uploadImageSchema = z.object({
-  file: z.instanceof(File).refine((file) => file.size < MAX_UPLOAD_IMAGE_SIZE, {
-    message: `Your image must be less than ${MAX_UPLOAD_IMAGE_SIZE_IN_MB}MB.`,
-  }),
+  file: z
+    .custom((value) => value instanceof File && value.size < MAX_UPLOAD_IMAGE_SIZE)
+    .refine((file) => file, {
+      message: `Sua imagem deve ter menos de ${MAX_UPLOAD_IMAGE_SIZE_IN_MB}MB.`,
+    }),
 });
 
 export function ProfileImageForm() {
@@ -42,28 +45,40 @@ export function ProfileImageForm() {
     {
       onError: ({ err }) => {
         toast({
-          title: "Error",
-          description: err.message || "Failed to update profile image.",
+          title: "Erro",
+          description: err.message || "Falha ao atualizar a imagem de perfil.",
           variant: "destructive",
         });
       },
       onSuccess: () => {
         toast({
-          title: "Image Updated",
-          description: "You've successfully updated your profile image.",
+          title: "Imagem Atualizada",
+          description: "Você atualizou sua imagem de perfil com sucesso.",
         });
         formRef.current?.reset();
       },
     }
   );
 
-  const onSubmit: SubmitHandler<z.infer<typeof uploadImageSchema>> = (
-    values
-  ) => {
+  const onSubmit: SubmitHandler<z.infer<typeof uploadImageSchema>> = (values) => {
+    // Verifique se o arquivo foi realmente enviado
+    if (!values.file || !(values.file instanceof File)) {
+      toast({
+        title: "Erro",
+        description: "Arquivo inválido. Por favor, envie um arquivo válido.",
+        variant: "destructive",
+      });
+      return;
+    }
+  
     const formData = new FormData();
-    formData.append("file", values.file!);
+    // Adiciona o arquivo corretamente
+    formData.append("file", values.file);
+  
+    // Chama a função de upload com o FormData
     uploadImage({ fileWrapper: formData });
   };
+  
 
   return (
     <Form {...form}>
@@ -77,7 +92,7 @@ export function ProfileImageForm() {
           name="file"
           render={({ field: { value, onChange, ...fieldProps } }) => (
             <FormItem>
-              <FormLabel>Image</FormLabel>
+              <FormLabel>Imagem</FormLabel>
               <FormControl>
                 <Input
                   {...fieldProps}
@@ -93,7 +108,7 @@ export function ProfileImageForm() {
             </FormItem>
           )}
         />
-        <LoaderButton isLoading={isPending}>Upload</LoaderButton>
+        <LoaderButton isLoading={isPending}>Carregar</LoaderButton>
       </form>
     </Form>
   );

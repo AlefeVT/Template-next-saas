@@ -24,10 +24,15 @@ import {
 import { useServerAction } from "zsa-react";
 
 const uploadImageSchema = z.object({
-  file: z.instanceof(File).refine((file) => file.size < MAX_UPLOAD_IMAGE_SIZE, {
-    message: `Your image must be less than ${MAX_UPLOAD_IMAGE_SIZE_IN_MB}MB.`,
-  }),
+  file: z
+    .instanceof(File, {
+      message: "Por favor, selecione um arquivo válido.",
+    })
+    .refine((file) => file.size < MAX_UPLOAD_IMAGE_SIZE, {
+      message: `A imagem deve ter menos de ${MAX_UPLOAD_IMAGE_SIZE_IN_MB}MB.`,
+    }),
 });
+
 
 export function BannerUploadForm({ groupId }: { groupId: GroupId }) {
   const { toast } = useToast();
@@ -43,18 +48,19 @@ export function BannerUploadForm({ groupId }: { groupId: GroupId }) {
     {
       onError: ({ err }) => {
         toast({
-          title: "Error",
-          description: err.message || "Failed to update group image.",
+          title: "Erro",
+          description: err.message || "Falha ao atualizar a imagem do grupo.",
           variant: "destructive",
         });
       },
       onSuccess: () => {
         toast({
-          title: "Image Updated",
-          description: "You've successfull updated your group image.",
+          title: "Imagem Atualizada",
+          description: "Você atualizou com sucesso a imagem do seu grupo.",
         });
         formRef.current?.reset();
       },
+      
     }
   );
 
@@ -78,7 +84,7 @@ export function BannerUploadForm({ groupId }: { groupId: GroupId }) {
           name="file"
           render={({ field: { value, onChange, ...fieldProps } }) => (
             <FormItem>
-              <FormLabel>Image</FormLabel>
+              <FormLabel>Imagem</FormLabel>
               <FormControl>
                 <Input
                   {...fieldProps}
@@ -95,7 +101,7 @@ export function BannerUploadForm({ groupId }: { groupId: GroupId }) {
           )}
         />
         <div className="flex justify-end">
-          <LoaderButton isLoading={isPending}>Upload</LoaderButton>
+          <LoaderButton isLoading={isPending}>Carregar</LoaderButton>
         </div>
       </form>
     </Form>

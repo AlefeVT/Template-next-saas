@@ -26,7 +26,7 @@ export default async function DashboardPage() {
         )}
       >
         <div className="flex justify-between items-center">
-          <h1 className={pageTitleStyles}>Your Groups</h1>
+          <h1 className={pageTitleStyles}>Seus grupos</h1>
         </div>
 
         <div
@@ -41,14 +41,14 @@ export default async function DashboardPage() {
             height="200"
             alt="no image placeholder image"
           ></Image>
-          <h2>Uh-oh, you don't own any groups</h2>
+          <h2>Uh-oh, você não possui nenhum grupo</h2>
 
           <div className="flex gap-4">
             <CreateGroupButton />
 
             <Button asChild className={btnStyles} variant={"secondary"}>
               <Link href={`/browse`}>
-                <Search className={btnIconStyles} /> Browse Groups
+                <Search className={btnIconStyles} /> Navegar nos grupos
               </Link>
             </Button>
           </div>
@@ -69,18 +69,18 @@ export default async function DashboardPage() {
             "flex justify-between items-center flex-wrap gap-4"
           )}
         >
-          Your Groups
+          Seus grupos
           {hasGroups && <CreateGroupButton />}
         </h1>
       </PageHeader>
       <div className={cn("space-y-8 container mx-auto py-12 min-h-screen")}>
         <div className="flex justify-between items-center">
-          <h2 className={"text-2xl"}>Groups You Manage</h2>
+          <h2 className={"text-2xl"}>Grupos que você gerencia</h2>
         </div>
 
         {ownedGroups.length === 0 && (
           <p className="flex gap-8 items-center mt-8 py-4 rounded border dark:bg-gray-800 px-4">
-            You don't manage any groups
+            Você não gerencia nenhum grupo
           </p>
         )}
 
@@ -90,20 +90,20 @@ export default async function DashboardPage() {
               memberCount={group.memberCount.toString()}
               group={group}
               key={group.id}
-              buttonText={"Manage Group"}
+              buttonText={"Gerenciar grupo"}
             />
           ))}
         </div>
 
         <div className="flex justify-between items-center">
-          <h2 className={"text-2xl"}>Your Other Groups</h2>
+          <h2 className={"text-2xl"}>Seus outros grupos</h2>
         </div>
 
         {memberGroups.length === 0 && (
           <p
             className={cn(cardStyles, "flex gap-8 items-center mt-8 py-4 px-4")}
           >
-            You're not part of any groups
+            Você não faz parte de nenhum grupo
           </p>
         )}
 

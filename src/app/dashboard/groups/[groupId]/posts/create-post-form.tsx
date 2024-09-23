@@ -36,8 +36,8 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
   const { execute, error, isPending } = useServerAction(createPostAction, {
     onSuccess() {
       toast({
-        title: "Success",
-        description: "Post created successfully.",
+        title: "Sucesso!",
+        description: "Postagem criada com sucesso.",
       });
       setIsOverlayOpen(false);
     },
@@ -80,7 +80,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           name="title"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Post Title</FormLabel>
+              <FormLabel>Título da postagem</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -94,7 +94,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           name="message"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Mensagem</FormLabel>
               <FormControl>
                 <Textarea rows={7} {...field} />
               </FormControl>
@@ -112,7 +112,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
         )}
 
         <LoaderButton isLoading={isPending}>
-          <CalendarDays className={btnIconStyles} /> Create Post
+          <CalendarDays className={btnIconStyles} /> Criar postagem
         </LoaderButton>
       </form>
     </Form>

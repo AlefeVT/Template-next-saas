@@ -5,29 +5,31 @@ import { Button } from "@/components/ui/button";
 import { pageTitleStyles } from "@/styles/common";
 import Link from "next/link";
 
-export default function ErrorPage({
+export default function PaginaDeErro({
   error,
 }: {
   error: Error & { digest?: string };
 }) {
-  const isAuthenticationError = error.message.includes(
+  const ehErroDeAutenticacao = error.message.includes(
     AUTHENTICATION_ERROR_MESSAGE
   );
 
   return (
     <div className="container mx-auto py-12 min-h-screen space-y-8">
-      {isAuthenticationError ? (
+      {ehErroDeAutenticacao ? (
         <>
-          <h1 className={pageTitleStyles}>Oops! You Need to Be Logged In</h1>
-          <p className="text-lg">To access this page, please log in first.</p>
+          <h1 className={pageTitleStyles}>Ops! Você precisa estar logado</h1>
+          <p className="text-lg">
+            Para acessar esta página, faça login primeiro.
+          </p>
 
           <Button asChild>
-            <Link href="/sign-in">Sign In</Link>
+            <Link href="/sign-in">Entrar</Link>
           </Button>
         </>
       ) : (
         <>
-          <h1 className={pageTitleStyles}>Oops! Something went wrong</h1>
+          <h1 className={pageTitleStyles}>Ops! Algo deu errado</h1>
           <p className="text-lg">{error.message}</p>
         </>
       )}

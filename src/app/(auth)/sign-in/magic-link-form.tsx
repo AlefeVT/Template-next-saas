@@ -17,8 +17,9 @@ import { useServerAction } from "zsa-react";
 import { useToast } from "@/components/ui/use-toast";
 
 const magicLinkSchema = z.object({
-  email: z.string().email(),
+  email: z.string().email({ message: "Por favor, insira um endereço de e-mail válido." }),
 });
+
 
 export function MagicLinkForm() {
   const { toast } = useToast();
@@ -26,7 +27,7 @@ export function MagicLinkForm() {
   const { execute, isPending } = useServerAction(signInMagicLinkAction, {
     onError({ err }) {
       toast({
-        title: "Something went wrong",
+        title: "Algo deu errado",
         description: err.message,
         variant: "destructive",
       });
@@ -57,7 +58,7 @@ export function MagicLinkForm() {
                 <Input
                   {...field}
                   className="w-full"
-                  placeholder="Enter your email"
+                  placeholder="Digite seu e-mail"
                   type="email"
                 />
               </FormControl>
@@ -66,7 +67,7 @@ export function MagicLinkForm() {
           )}
         />
         <LoaderButton isLoading={isPending} className="w-full" type="submit">
-          Sign in with magic link
+          Entre usando um link enviado no email.
         </LoaderButton>
       </form>
     </Form>

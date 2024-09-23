@@ -3,9 +3,9 @@ import { DeleteAccountButton } from "./delete-account-button";
 
 export default async function DangerPage() {
   return (
-    <ConfigurationPanel variant="destructive" title="Delete Account">
+    <ConfigurationPanel variant="destructive" title="Excluir conta">
       <div className="flex flex-col gap-4">
-        <div>You can delete your account below</div>
+        <div>Você pode excluir sua conta abaixo</div>
         <DeleteAccountButton />
       </div>
     </ConfigurationPanel>

@@ -68,7 +68,7 @@ export function ProfileNameForm({ profileName }: { profileName: string }) {
           name="profileName"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Display Name</FormLabel>
+              <FormLabel>Nome de exibição</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -76,7 +76,7 @@ export function ProfileNameForm({ profileName }: { profileName: string }) {
             </FormItem>
           )}
         />
-        <LoaderButton isLoading={isPending}>Save</LoaderButton>
+        <LoaderButton isLoading={isPending}>Salvar</LoaderButton>
       </form>
     </Form>
   );

@@ -25,7 +25,7 @@ export default async function PostsPage({
   return (
     <div className="flex flex-col gap-8">
       <div className="flex justify-between items-center">
-        <h2 className={pageTitleStyles}>Posts</h2>
+        <h2 className={pageTitleStyles}>Postagens</h2>
         {canPost && <CreatePostButton />}
       </div>
 
@@ -62,7 +62,7 @@ async function PostsList({ groupId }: { groupId: string }) {
             height="200"
             alt="no image placeholder image"
           ></Image>
-          <h2>No posts created yet</h2>
+          <h2>Nenhuma postagem criada ainda</h2>
           <CreatePostButton />
         </div>
       )}

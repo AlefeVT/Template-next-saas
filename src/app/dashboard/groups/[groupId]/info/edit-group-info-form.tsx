@@ -124,15 +124,15 @@ export const EditGroupInfoForm = ({
     {
       onSuccess() {
         toast({
-          title: "Success!",
-          description: "Group info has been updated.",
+          title: "Sucesso!",
+          description: "As informações do grupo foram atualizadas.",
         });
       },
       onError() {
         toast({
           title: "Uh-oh!",
           variant: "destructive",
-          description: "The group info failed to update.",
+          description: "As informações do grupo não foram atualizadas.",
         });
       },
     }
@@ -160,7 +160,7 @@ export const EditGroupInfoForm = ({
             isLoading={isPending}
             className="self-end"
           >
-            Save Changes
+            Salvar alterações
           </LoaderButton>
         </div>
       )}

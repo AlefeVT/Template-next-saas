@@ -42,16 +42,19 @@ import {
 } from "@/app-config";
 
 const createEventSchema = z.object({
-  name: z.string().min(1),
-  description: z.string().min(1),
+  name: z.string().min(1, "O nome é obrigatório"),
+  description: z.string().min(1, "A descrição é obrigatória"),
   startsOn: z.date(),
   file: z
-    .instanceof(File)
+    .instanceof(File, {
+      message: "Por favor, selecione um arquivo válido.",
+    })
     .refine((file) => file.size < MAX_UPLOAD_IMAGE_SIZE, {
-      message: `Your image was too large. It must be under ${MAX_UPLOAD_IMAGE_SIZE_IN_MB}MB`,
+      message: `A imagem é muito grande. Deve ter menos de ${MAX_UPLOAD_IMAGE_SIZE_IN_MB}MB`,
     })
     .optional(),
 });
+
 
 export function CreateEventForm({ groupId }: { groupId: GroupId }) {
   const { setIsOpen: setIsOverlayOpen } = useContext(ToggleContext);
@@ -127,7 +130,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           name="name"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Event Name</FormLabel>
+              <FormLabel>Nome do Evento</FormLabel>
               <FormControl>
                 <Input {...field} />
               </FormControl>
@@ -141,7 +144,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           name="description"
           render={({ field }) => (
             <FormItem className="flex-1">
-              <FormLabel>Description</FormLabel>
+              <FormLabel>Descrição</FormLabel>
               <FormControl>
                 <Textarea rows={7} {...field} />
               </FormControl>
@@ -155,7 +158,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           name="startsOn"
           render={({ field }) => (
             <FormItem className="flex flex-col">
-              <FormLabel>Date of Event</FormLabel>
+              <FormLabel>Data do Evento</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
@@ -169,7 +172,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
                       {field.value ? (
                         format(field.value, "PPP")
                       ) : (
-                        <span>Pick a date</span>
+                        <span>Escolha uma data</span>
                       )}
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                     </Button>
@@ -194,12 +197,12 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           )}
         />
 
-        <FormLabel className="mt-4">Time of Event</FormLabel>
+        <FormLabel className="mt-4">Hora do Evento</FormLabel>
 
         <div className="flex items-end gap-2">
           <div className="grid gap-1 text-center">
             <Label htmlFor="hours" className="text-xs">
-              Hours
+            Horas
             </Label>
             <TimePickerInput
               picker="12hours"
@@ -212,7 +215,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           </div>
           <div className="grid gap-1 text-center">
             <Label htmlFor="minutes" className="text-xs">
-              Minutes
+            Minutos
             </Label>
             <TimePickerInput
               picker="minutes"
@@ -225,7 +228,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           </div>
           <div className="grid gap-1 text-center">
             <Label htmlFor="seconds" className="text-xs">
-              Seconds
+              Segundos
             </Label>
             <TimePickerInput
               picker="seconds"
@@ -237,7 +240,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           </div>
           <div className="grid gap-1 text-center">
             <Label htmlFor="period" className="text-xs">
-              Period
+              Periodo
             </Label>
             <TimePeriodSelect
               period={period}
@@ -259,7 +262,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
           name="file"
           render={({ field: { value, onChange, ...fieldProps } }) => (
             <FormItem>
-              <FormLabel>Image</FormLabel>
+              <FormLabel>Imagem</FormLabel>
               <FormControl>
                 <Input
                   {...fieldProps}
@@ -285,7 +288,7 @@ export function CreateEventForm({ groupId }: { groupId: GroupId }) {
         )}
 
         <LoaderButton isLoading={isPending}>
-          <CalendarDays className={btnIconStyles} /> Create Event
+          <CalendarDays className={btnIconStyles} /> Criar Evento
         </LoaderButton>
       </form>
     </Form>

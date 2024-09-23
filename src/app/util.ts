@@ -1,8 +1,8 @@
 export const AUTHENTICATION_ERROR_MESSAGE =
-  "You must be logged in to view this content";
+  "Você precisa estar logado para visualizar este conteúdo";
 
 export const PRIVATE_GROUP_ERROR_MESSAGE =
-  "You do not have permission to view this group";
+  "Você não tem permissão para visualizar este grupo";
 
 export const AuthenticationError = class AuthenticationError extends Error {
   constructor() {
