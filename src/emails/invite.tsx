@@ -42,9 +42,7 @@ export function InviteEmail({ group, token }: { group: Group; token: string }) {
 
               <Section className="text-center mt-[32px] mb-[32px]">
                 <Text className="text-black font-medium text-[14px] leading-[24px] mb-8">
-                  You&apos; been invited to a group on groupfinder.com called{" "}
-                  {group.name}. Click the link below to login and access your
-                  group.
+                Você foi convidado para um grupo no groupfinder.com chamado {group.name}. Clique no link abaixo para fazer login e acessar seu grupo.
                 </Text>
 
                 <Text className="text-black font-medium text-[14px] leading-[24px]">
@@ -53,7 +51,7 @@ export function InviteEmail({ group, token }: { group: Group; token: string }) {
                     target="_blank"
                     className="text-[#2754C5] underline"
                   >
-                    Login to View Group
+                    Faça login para visualizar o grupo
                   </Link>
                 </Text>
               </Section>
@@ -61,7 +59,7 @@ export function InviteEmail({ group, token }: { group: Group; token: string }) {
               <Hr className="border border-solid border-[#eaeaea] my-[26px] mx-0 w-full " />
 
               <Text className="text-[#666666] text-[12px] leading-[24px] flex items-center justify-center">
-                © 2024 {applicationName}. All rights reserved.
+                © 2024 {applicationName}. Todos os direitos reservados.
               </Text>
             </Container>
           </Body>

@@ -52,7 +52,7 @@ export function Footer() {
         <div className="text-center">
           <span className="block text-sm text-center text-gray-500 dark:text-gray-400">
             © 2024 <Link href="/">{applicationName}</Link>. Todos os direitos reservados.
-            Desenvolvido com ❤️ por {companyName}
+            Desenvolvido por {companyName}
           </span>
         </div>
       </footer>
