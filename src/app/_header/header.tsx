@@ -32,7 +32,7 @@ export async function Header() {
         <div className="flex justify-between gap-10 items-center">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/group.jpeg"
+              src="/logo/AVONTZ_logo.svg"
               alt="Group Finder Logo"
               width={40}
               height={40}
